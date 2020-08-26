@@ -61,11 +61,11 @@ public:
 	void map_cnots_to_cz(Gate *g, Circuit *I);
 	void implement_hardware_directions_for_cnots(Gate *g, Circuit *I);
 	void print_code(Circuit *I, string fname);
-	void print_one_qubit_gate(Gate *g, ofstream &out_file, int is_last_gate);
-	void print_two_qubit_gate(Gate *g, ofstream &out_file, int is_last_gate);
-	void print_header(ofstream &out_file);
-	void print_measure_ops(ofstream &out_file);
-	void print_footer(ofstream &out_file);
+	virtual void print_one_qubit_gate(Gate *g, ofstream &out_file, int is_last_gate);
+	virtual void print_two_qubit_gate(Gate *g, ofstream &out_file, int is_last_gate);
+	virtual void print_header(ofstream &out_file);
+	virtual void print_measure_ops(ofstream &out_file);
+	virtual void print_footer(ofstream &out_file);
 	void _external_link(Gate *g, vector<Gate*> gate_list, Circuit *I, int link_direction);
 };
 

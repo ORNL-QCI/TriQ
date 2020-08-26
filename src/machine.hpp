@@ -43,6 +43,7 @@ public:
 	string machine_name;
 	string partition_file;
 	int num_partitions;
+	Machine() = default;
 	Machine(string name, int aerNQ=0, string aer_data_file="", string aer_partition_file="", int aer_num_partitions=0){
 		machine_name = name;
 		if(name == "ibmqx5"){
@@ -132,7 +133,7 @@ public:
 	void read_partition_data(string fname);
 	int is_edge(int q1, int q2);
 
-private:
+protected:
 	void setup_topology();
 	vector< vector<int>* >* compute_swap_paths_one_vertex(int q);
 	std::vector<int>* compute_shortest_sequence(int source, int dest,
