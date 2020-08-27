@@ -42,6 +42,7 @@ URotate* Optimize1QGates::create_U1_gate(double lambda){
 	g->theta = 0;
 	g->phi = 0;
 	g->lambda = lambda;
+	return g;
 }
 
 URotate* Optimize1QGates::create_U2_gate(double phi, double lambda){
@@ -50,6 +51,7 @@ URotate* Optimize1QGates::create_U2_gate(double phi, double lambda){
 	g->theta = PI/2.0;
 	g->phi = phi;
 	g->lambda = lambda;
+	return g;
 }
 
 URotate* Optimize1QGates::create_U3_gate(double theta, double phi, double lambda){
@@ -58,6 +60,7 @@ URotate* Optimize1QGates::create_U3_gate(double theta, double phi, double lambda
 	g->theta = theta;
 	g->phi = phi;
 	g->lambda = lambda;
+	return g;
 }
 
 void Optimize1QGates::decompose(){
