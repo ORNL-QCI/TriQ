@@ -54,9 +54,9 @@ void Mapper::dummy_mapper_perm(int j){
 }
 
 int Mapper::log_reliab(float val) {
-	assert(val > 0 && val <= 1.0);
+	assert(val >= 0 && val <= 1.0);
 	if(config.is_sum_objective == MapSum){
-		return int(1000 * log(val));
+		return int(1000 * triq::log(val));
 	}else if(config.is_sum_objective == MapMin){
 		return int(1000 * val);
 	}else assert(0);

@@ -46,4 +46,10 @@ enum CompileAlgorithm{
 extern int CompilerAlgorithm;
 extern int ErrorScaleFactor;
 
+namespace triq {
+inline float log(float val) {
+	constexpr float INF_VAL = 9999.99;
+	return (val == 0.0) ? -INF_VAL : std::log(val);
+}
+}
 #endif /* HEADERS_HPP_ */

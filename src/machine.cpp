@@ -228,10 +228,10 @@ void Machine::setup_topology() {
 					* s_reliab[u] * s_reliab[v];
 		}
 		swap_cost = cx_cost * cx_cost * rev_cx_cost;
-		boost::add_edge(u, v, -log(swap_cost), gswap_log);
-		boost::add_edge(v, u, -log(swap_cost), gswap_log);
-		cx_log_reliab[make_pair(u,v)] = -log(cx_cost);
-		cx_log_reliab[make_pair(v,u)] = -log(rev_cx_cost);
+		boost::add_edge(u, v, -triq::log(swap_cost), gswap_log);
+		boost::add_edge(v, u, -triq::log(swap_cost), gswap_log);
+		cx_log_reliab[make_pair(u,v)] = -triq::log(cx_cost);
+		cx_log_reliab[make_pair(v,u)] = -triq::log(rev_cx_cost);
 		if(machine_name == "ibmqx5" || machine_name == "ibmqx4" || machine_name == "ibmq_16_melbourne"){
 			hw_cnot_directions.push_back(make_pair(u,v));
 		}else{

@@ -245,7 +245,7 @@ void Backtrack::solve(BacktrackNode *n, int consider_measurements){
 			float measure_reliab = 0;
 			for (auto qmap_entry : n->qubit_map) {
 				measure_reliab = measure_reliab
-						- log(M->m_reliab[qmap_entry.second]);
+						- triq::log(M->m_reliab[qmap_entry.second]);
 			}
 			n->reliab = n->reliab + measure_reliab;
 		}
